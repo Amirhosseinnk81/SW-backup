@@ -1,0 +1,8 @@
+1.download and install python
+2.run as administrator cmd
+3.type in cmd : PIP install paramiko
+4.create folder "sw-Backup"(Example)
+5.script_bak
+6.create bat file
+7.create  basic schedular
+  -- start in : run.bat address

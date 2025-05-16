@@ -1,0 +1,171 @@
+terminal length 0
+sw#show running-config
+Building configuration...
+
+Current configuration : 3542 bytes
+!
+! Last configuration change at 04:33:35 UTC Mon Jan 2 2006 by riabi
+!
+version 15.2
+no service pad
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname sw
+!
+boot-start-marker
+boot-end-marker
+!
+!
+username riabi privilege 15 secret 5 $1$xJd.$fcHLMLM9b2u.KuodV0heC/
+no aaa new-model
+switch 1 provision ws-c2960s-24ps-l
+!
+!
+ip domain-name araz
+!
+!
+!
+!
+!
+!
+!
+crypto pki trustpoint TP-self-signed-129042048
+ enrollment selfsigned
+ subject-name cn=IOS-Self-Signed-Certificate-129042048
+ revocation-check none
+ rsakeypair TP-self-signed-129042048
+!
+!
+crypto pki certificate chain TP-self-signed-129042048
+ certificate self-signed 01
+  30820229 30820192 A0030201 02020101 300D0609 2A864886 F70D0101 05050030 
+  30312E30 2C060355 04031325 494F532D 53656C66 2D536967 6E65642D 43657274 
+  69666963 6174652D 31323930 34323034 38301E17 0D303630 31303230 30303035 
+  325A170D 32303031 30313030 30303030 5A303031 2E302C06 03550403 1325494F 
+  532D5365 6C662D53 69676E65 642D4365 72746966 69636174 652D3132 39303432 
+  30343830 819F300D 06092A86 4886F70D 01010105 0003818D 00308189 02818100 
+  908881C7 3145F1E1 50FB6E5E 75FB93C2 FB17A5CD 63D05A0D 6A3D5A75 E604D691 
+  3D8D0C1F 13F72A08 B86D44CB 4AAB2AE4 1957B20F BFA32D7D F2036AFA DC2FA9C8 
+  C0D0744E E6265DDF 11F565B7 69937A8C 9BCA349E 3423FE30 05140C05 FBE1837D 
+  086D69C5 53D9D343 E7B2C8D5 9FD174C4 535C4E83 3E63BD9E FA050271 91637829 
+  02030100 01A35330 51300F06 03551D13 0101FF04 05300301 01FF301F 0603551D 
+  23041830 1680149F CC913937 0B608B0C E44A488F 62EEE627 DD7FDD30 1D060355 
+  1D0E0416 04149FCC 9139370B 608B0CE4 4A488F62 EEE627DD 7FDD300D 06092A86 
+  4886F70D 01010505 00038181 0068C579 80993BE6 D5425EFA 812AB1FC A0B8E560 
+  FCC0CCC0 D72FB032 54C86533 F1CD41E3 62529B5A E0F6E67A 367B29EE AAD666F5 
+  7380126C D3A855E5 A1CADF63 D7B6BDB2 6903F9FE 483C49F9 6854C65B EE29BF6E 
+  B3FA6680 5693752D 24DE8ED9 E58E5EF0 6D5E2EBA 7019E1AC 117F32CC 2F75E3E3 
+  F1920A74 1CAFDDA6 57EE477C 79
+  	quit
+spanning-tree mode pvst
+spanning-tree extend system-id
+!
+!
+!
+!
+vlan internal allocation policy ascending
+!
+!
+! 
+!
+!
+!
+!
+!
+!
+!
+!
+interface FastEthernet0
+ no ip address
+!
+interface GigabitEthernet1/0/1
+ description vlan30
+ switchport access vlan 30
+ switchport mode access
+!
+interface GigabitEthernet1/0/2
+!
+interface GigabitEthernet1/0/3
+!
+interface GigabitEthernet1/0/4
+!
+interface GigabitEthernet1/0/5
+!
+interface GigabitEthernet1/0/6
+!
+interface GigabitEthernet1/0/7
+!
+interface GigabitEthernet1/0/8
+!
+interface GigabitEthernet1/0/9
+!
+interface GigabitEthernet1/0/10
+!
+interface GigabitEthernet1/0/11
+!
+interface GigabitEthernet1/0/12
+!
+interface GigabitEthernet1/0/13
+!
+interface GigabitEthernet1/0/14
+!
+interface GigabitEthernet1/0/15
+!
+interface GigabitEthernet1/0/16
+!
+interface GigabitEthernet1/0/17
+!
+interface GigabitEthernet1/0/18
+!
+interface GigabitEthernet1/0/19
+!
+interface GigabitEthernet1/0/20
+!
+interface GigabitEthernet1/0/21
+!
+interface GigabitEthernet1/0/22
+!
+interface GigabitEthernet1/0/23
+!
+interface GigabitEthernet1/0/24
+!
+interface GigabitEthernet1/0/25
+!
+interface GigabitEthernet1/0/26
+!
+interface GigabitEthernet1/0/27
+!
+interface GigabitEthernet1/0/28
+!
+interface Vlan1
+ no ip address
+!
+interface Vlan10
+ ip address 192.168.10.254 255.255.255.0
+!
+interface Vlan30
+ ip address 192.168.30.254 255.255.255.0
+!
+ip http server
+ip http secure-server
+!
+ip ssh version 2
+!
+!
+no vstack
+!
+line con 0
+line vty 0 2
+ login local
+ transport input all
+ transport output all
+line vty 3 4
+ login
+line vty 5 15
+ login
+!
+end
+
+sw#
