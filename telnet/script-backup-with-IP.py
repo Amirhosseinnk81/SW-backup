@@ -3,7 +3,7 @@ import time
 import os
 # لیست سوییچ‌ها (IP, یوزرنیم, پسورد, پسورد Enable)
 switches = [
-    ("192.168.30.254", "riabi", "123"),
+    ("IP", "username", "password"),
 ]
 
 def backup_switch(host, username, password, backup_path):
