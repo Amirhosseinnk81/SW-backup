@@ -20,7 +20,7 @@ def backup_switch(hostname, username, password):
     ssh.close()
 
 switches = [
-    {'hostname': '192.168.30.254', 'username': 'riabi', 'password': '123'},
+    {'hostname': 'IP', 'username': 'username', 'password': 'password'},
     
 ]
 
