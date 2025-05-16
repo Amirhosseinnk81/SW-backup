@@ -34,7 +34,7 @@ def backup_switch(hostname, username, password, backup_path):
         print(f"❌ خطا در بکاپ‌گیری از {hostname}: {e}")
 
 switches = [
-    {'hostname': '192.168.30.254', 'username': 'riabi', 'password': '123'},
+    {'hostname': 'IP', 'username': 'username', 'password': 'password'},
 ]
 
 backup_path = r"\\192.168.30.2\backups"  # مسیر شبکه‌ای ذخیره بکاپ‌ها
